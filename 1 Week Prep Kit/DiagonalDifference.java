@@ -21,8 +21,19 @@ class Result {
 
     public static int diagonalDifference(List<List<Integer>> arr) {
     // Write your code here
+        int arrSize = arr.size();
+        int LeftToRightDiag = 0;
+        int RightToLeftDiag = 0;
+        
 
+        for (int i = 0; i < arrSize; i++) {
+        LeftToRightDiag += arr.get(i).get(i);
+        RightToLeftDiag += arr.get(i).get(arrSize-1-i);
+        }
+        
+        return Math.abs(LeftToRightDiag - RightToLeftDiag);
     }
+    
 
 }
 
